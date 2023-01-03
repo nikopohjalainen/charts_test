@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chart test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="container lg:auto columns-3 m-auto">
+
+      <div class="py-20 m-auto">
+          <canvas id="verkko"></canvas>
+      </div>
+
+      <div class="py-20">
+        <canvas id="printti"><p>test</p></canvas>
+      </div>
+
+      <div class="py-20">
+        <canvas id="uutiskirje"><p>test</p></canvas>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script>
+
+        new Chart(
+        document.getElementById('verkko'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Kuntalehti', 'Kuntatekniikka', 'Kommuntorget', 'Kunta.tv'],
+            datasets: [{
+              label: 'Kävijää',
+              data: [65000, 12500, 12500, 6667],
+              borderWidth: 5
+            }]
+          },
+          options: {
+            plugins: {
+              tooltip: {
+                enabled: false,
+              }
+            }
+          }
+        });
+
+        new Chart(
+        document.getElementById('printti'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Kuntalehti', 'Kuntatekniikka', 'Kommuntorget'],
+            datasets: [{
+              label: 'Kävijää',
+              data: [30000, 9000, 2000],
+              borderWidth: 5
+            }]
+          },
+          options: {
+            plugins: {
+              tooltip: {
+                enabled: false,
+              }
+            }
+          }
+        });
+
+        new Chart(
+        document.getElementById('uutiskirje'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Kuntalehti', 'Kuntatekniikka', 'Kommuntorget'],
+            datasets: [{
+              label: 'Kävijää',
+              data: [20000, 5500, 2000],
+              borderWidth: 5
+            }]
+          },
+          options: {
+            plugins: {
+              tooltip: {
+                enabled: false,
+              }
+            }
+          }
+        });
+      </script>
+
+  </body>
+</html>
